@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda de comida orgánica para bebés. Nutrición saludable y natural para tus pequeños.">
+  <meta name="keywords" content="comida orgánica, alimentos para bebés, nutrición infantil, productos naturales">
+  <meta name="author" content="OrganicBaby">
+  <title>OrganicBaby - Comida Orgánica para Bebés</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins bg-beige-100 text-gray-800">
+  <!-- Header Section -->
+  <header class="bg-green-600 text-white sticky top-0 z-50">
+    <nav class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <div class="text-2xl font-semibold">
+        <a href="#home">OrganicBaby</a>
+      </div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-beige-200">Inicio</a>
+        <a href="#products" class="hover:text-beige-200">Productos</a>
+        <a href="#about" class="hover:text-beige-200">Nosotros</a>
+        <a href="#contact" class="hover:text-beige-200">Contacto</a>
+        <a href="#cart" class="hover:text-beige-200">
+          <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </a>
+      </div>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-green-600">
+      <a href="#home" class="block py-2 px-4 hover:bg-green-700">Inicio</a>
+      <a href="#products" class="block py-2 px-4 hover:bg-green-700">Productos</a>
+      <a href="#about" class="block py-2 px-4 hover:bg-green-700">Nosotros</a>
+      <a href="#contact" class="block py-2 px-4 hover:bg-green-700">Contacto</a>
+      <a href="#cart" class="block py-2 px-4 hover:bg-green-700">Carrito</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1501820488136-72669149e0d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+    <div class="text-center text-white bg-green-600 bg-opacity-75 p-8 rounded-lg">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Comida Orgánica para Bebés</h1>
+      <p class="text-lg md:text-xl mb-6">Nutrición saludable y natural para tus pequeños</p>
+      <a href="#products" class="bg-beige-200 text-green-800 px-6 py-3 rounded-full font-semibold hover:bg-beige-300">Ver Productos</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="container mx-auto py-12">
+    <h2 class="text-3xl font-semibold text-center mb-8">Nuestros Productos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Product 1 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Puré de manzana" class="w-full h-48 object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Puré de Manzana Orgánica</h3>
+        <p class="text-gray-600 mt-2">Puré 100% orgánico, sin azúcares añadidos, ideal para bebés desde 6 meses.</p>
+        <p class="text-green-600 font-bold mt-2">$4.99</p>
+        <button onclick="addToCart('Puré de Manzana Orgánica')" class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Añadir al Carrito</button>
+      </div>
+      <!-- Product 2 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Papilla de zanahoria" class="w-full h-48 object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Papilla de Zanahoria</h3>
+        <p class="text-gray-600 mt-2">Zanahorias orgánicas molidas, ricas en vitaminas, para bebés desde 8 meses.</p>
+        <p class="text-green-600 font-bold mt-2">$5.49</p>
+        <button onclick="addToCart('Papilla de Zanahoria')" class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Añadir al Carrito</button>
+      </div>
+      <!-- Product 3 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Compota de pera" class="w-full h-48 object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Compota de Pera Orgánica</h3>
+        <p class="text-gray-600 mt-2">Peras orgánicas suaves, perfectas para bebés desde 6 meses.</p>
+        <p class="text-green-600 font-bold mt-2">$4.79</p>
+        <button onclick="addToCart('Compota de Pera Orgánica')" class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Añadir al Carrito</button>
+      </div>
+      <!-- Product 4 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Puré de calabaza" class="w-full h-48 object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Puré de Calabaza</h3>
+        <p class="text-gray-600 mt-2">Calabaza orgánica cremosa, ideal para bebés desde 7 meses.</p>
+        <p class="text-green-600 font-bold mt-2">$5.29</p>
+        <button onclick="addToCart('Puré de Calabaza')" class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Añadir al Carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-beige-200 py-12">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 p-4">
+        <h2 class="text-3xl font-semibold mb-4">Sobre Nosotros</h2>
+        <p class="text-gray-700">En OrganicBaby, ofrecemos alimentos 100% orgánicos, seguros y nutritivos para bebés. Nuestra misión es brindar a los padres la tranquilidad de saber que sus pequeños reciben lo mejor de la naturaleza, sin aditivos ni conservantes.</p>
+      </div>
+      <div class="md:w-1/2 p-4">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Bebé feliz" class="w-full h-64 object-cover rounded-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact" class="bg-green-800 text-white py-8">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Síguenos</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-beige-200">Facebook</a>
+          <a href="#" class="hover:text-beige-200">Instagram</a>
+          <a href="#" class="hover:text-beige-200">Twitter</a>
+        </div>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83eaede5ecc3ecf1e4e2edeae0e1e2e1faade0ecee">[email&#160;protected]</a></p>
+        <p>Teléfono: +123 456 7890</p>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Suscríbete</h3>
+        <div class="flex">
+          <input type="email" placeholder="Tu correo electrónico" class="w-full p-2 rounded-l text-gray-800">
+          <button class="bg-beige-200 text-green-800 p-2 rounded-r hover:bg-beige-300">Suscribir</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Hamburger Menu and Add to Cart -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Add to Cart functionality
+    function addToCart(productName) {
+      alert(`${productName} ha sido añadido al carrito!`);
+    }
+  </script>
+
+  <!-- Custom Tailwind Colors -->
+  <style>
+    :root {
+      --beige-100: #F5F5F5;
+      --beige-200: #FFF3E0;
+      --beige-300: #FFE0B2;
+    }
+  </style>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95fd48a1ac141308',t:'MTc1MjYyNDcwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
